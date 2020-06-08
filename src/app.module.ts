@@ -1,10 +1,23 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule as NestConfigurationModule } from '@nestjs/config';
+import { MongooseModule, MongooseModuleAsyncOptions } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { ConfigurationModule, ConfigurationService } from './ConfigurationModule';
+
+const mongooseAsyncModule: MongooseModuleAsyncOptions = {
+	imports: [ConfigurationModule],
+	inject: [ConfigurationService],
+	useFactory: async (configurationService: ConfigurationService) => configurationService.getDatabaseURI()
+}
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+	imports: [
+		ConfigurationModule,
+		NestConfigurationModule.forRoot({isGlobal: true}),
+		MongooseModule.forRootAsync(mongooseAsyncModule)
+	],
+	controllers: [AppController],
+	providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
