@@ -4,6 +4,7 @@ import { MongooseModule, MongooseModuleAsyncOptions } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigurationModule, ConfigurationService } from './ConfigurationModule';
+import { OpportunityModule } from './OpportunitiesModule';
 
 const mongooseAsyncModule: MongooseModuleAsyncOptions = {
 	imports: [ConfigurationModule],
@@ -14,6 +15,7 @@ const mongooseAsyncModule: MongooseModuleAsyncOptions = {
 @Module({
 	imports: [
 		ConfigurationModule,
+		OpportunityModule,
 		NestConfigurationModule.forRoot({isGlobal: true}),
 		MongooseModule.forRootAsync(mongooseAsyncModule)
 	],

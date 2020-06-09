@@ -1,0 +1,1 @@
+export { OpportunityMapper } from './opportunity.mapper'
