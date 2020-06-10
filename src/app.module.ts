@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigurationModule, ConfigurationService } from './ConfigurationModule';
 import { OpportunityModule } from './OpportunitiesModule';
+import { PipedriveModule } from './PipedriveModule';
 
 const mongooseAsyncModule: MongooseModuleAsyncOptions = {
 	imports: [ConfigurationModule],
@@ -16,6 +17,7 @@ const mongooseAsyncModule: MongooseModuleAsyncOptions = {
 	imports: [
 		ConfigurationModule,
 		OpportunityModule,
+		PipedriveModule,
 		NestConfigurationModule.forRoot({isGlobal: true}),
 		MongooseModule.forRootAsync(mongooseAsyncModule)
 	],
