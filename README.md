@@ -23,7 +23,7 @@ Atualmente ela está disponível somente em aplicações locais, para isso siga 
 
 > **https://www.getpostman.com/collections/5e0fb2c03cd278f8a99e**
 
-Observação: Essa API foi contruida usando o NestJS, um framework modulas de NodeJS inspirado no Angular.
+Observação: Essa API foi contruida usando o NestJS, um framework modular de NodeJS inspirado no Angular.
 
 <hr>
 
