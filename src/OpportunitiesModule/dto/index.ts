@@ -1,1 +1,5 @@
 export { OpportunityDTO } from './opportunity.dto'
+export { NewOpportunityDTO } from './new-opportunity.dto'
+export { PipedriveDealDTO } from './deal-pipedrive.dto'
+export { DateReportDTO } from './date-report.dto'
+export { BlingPaymentDTO } from './payment-bling.dto'

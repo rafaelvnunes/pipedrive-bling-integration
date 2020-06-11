@@ -8,7 +8,7 @@ export class NewReceivingBillDTO {
     valor: number;
     historico?: string;
     categoria?: string;
-    idFormaPagamento: string;
+    idFormaPagamento?: string;
     portador?: string;
     vendedor: string;
     ocorrencia: {

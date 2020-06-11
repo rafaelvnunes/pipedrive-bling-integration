@@ -1,3 +1,32 @@
+# Integração Bling e Pipedrive
+
+> Api de integração do Bling com o Pipedrive, usando
+> o Atlas do MongoDB para Banco de Dados em cloud
+
+# Como iniciar a API
+
+Atualmente ela está disponível somente em aplicações locais, para isso siga os passo:
+
+1 - Tenha o Node.js instalado em sua máquina, de preferência a versão 14.4.0 (versões diferentes podem falhar)
+
+2 - Existe um arquivo de configuração **.env**, altere nele as variáveis de ambiente (porta e ip) se achar necessário
+
+3- Instale as depedências do projeto
+
+> **npm install**
+
+4- Inicie a aplicação
+
+> **npm run start**
+
+5- Para ter acesso simplificado aos métodos e seu objetos de retorno ou body use a coleção do Postman a seguir:
+
+> **https://www.getpostman.com/collections/5e0fb2c03cd278f8a99e**
+
+Observação: Essa API foi contruida usando o NestJS, um framework modulas de NodeJS inspirado no Angular.
+
+<hr>
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
@@ -45,19 +74,6 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
 ```
 
 ## Support

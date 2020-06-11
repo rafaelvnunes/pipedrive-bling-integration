@@ -7,6 +7,7 @@ export class AppConfigurationService {
     constructor(private readonly configurationService: ConfigService) { }
 
     port: number = this.configurationService.get<number>('PORT');
+    domain: string = this.configurationService.get<string>('DOMAIN');
 
     pipedriveApiKey: string = this.configurationService.get<string>('PIPEDRIVE_API_KEY');
     pipedriveCompanyDomain: string = this.configurationService.get<string>('PIPEDRIVE_COMPANY_DOMAIN');
@@ -21,7 +22,7 @@ export class AppConfigurationService {
 
     getDatabaseURI(): MongooseModuleOptions {
         return {uri: `mongodb+srv://${this.databaseUser}:${this.databasePassword}@${this.databaseHost}/` +
-            `${this.databaseName}?authSource=${this.databaseAuthSource}`};
+            `${this.databaseName}?authSource=${this.databaseAuthSource}`, useFindAndModify:false};
     }
 
 }

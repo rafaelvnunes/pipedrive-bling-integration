@@ -12,8 +12,8 @@ export class Mapper<E, D> {
     });
   }
 
-  toDtoList(entityArray: E[]): D[] {
-    return plainToClass<D, E>(this.dtoClass, entityArray, {
+  toDtoList(entityArray: Partial<E>[]): D[] {
+    return plainToClass<D, Partial<E>>(this.dtoClass, entityArray, {
       excludeExtraneousValues: true,
     });
   }
@@ -24,8 +24,8 @@ export class Mapper<E, D> {
     });
   }
 
-  toEntityList(dtoArray: D[]): E[] {
-    return plainToClass<E, D>(this.entityClass, dtoArray, {
+  toEntityList(dtoArray: Partial<D>[]): E[] {
+    return plainToClass<E, Partial<D>>(this.entityClass, dtoArray, {
       excludeExtraneousValues: true,
     });
   }

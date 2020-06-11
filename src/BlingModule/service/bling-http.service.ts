@@ -16,7 +16,7 @@ export class BlingHttp {
     create(endpoint: string, data: string, config?: AxiosRequestConfig): Observable<AxiosResponse<any>> {
         let url: string = this.buildUrl(endpoint);
         if(data) url += `&xml=${data}`;
-        return this.http.post<any>(url, null, {headers: {'Accept': '*/*','content-type': 'application/x-www-form-urlencoded'}});
+        return this.http.post<any>(url, null, {headers: {'Accept': '*/*','content-type': 'application/x-www-form-urlencoded', 'Accept-Encoding': 'gzip, deflate, br'}});
     }
 
     findAll(endpoint: string, config?: AxiosRequestConfig): Observable<AxiosResponse<any>> {

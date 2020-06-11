@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body } from "@nestjs/common";
+import { Controller, Get, Post, Body, Put } from "@nestjs/common";
 import { API_PREFIX, API_VERSION, BLING_ENDPOINT, BILLS_ENDPOINT } from "src/CommonsModule/utils/constants";
 import { BlingService } from "../service";
 import { NewPayingBillDTO, CreatedPayingBillDTO, PayingBillDTO, CreatedReceivingBillDTO, NewReceivingBillDTO } from "../dto";
@@ -10,13 +10,18 @@ import { ReceivingBillDTO } from "../dto/receiving-bill.dto";
 export class BlingController {
     constructor(private readonly service: BlingService) {}
 
+    @Get()
+    public async findAllBills(): Promise<any[]> {
+        return this.service.findAll();
+    }
+
     @Get('paying')
-    public async findAllPayingBills(): Promise<PayingBillDTO> {
+    public async findAllPayingBills(): Promise<PayingBillDTO[]> {
         return this.service.findAllPayingBills();
     }
 
     @Get('receiving')
-    public async findAllReceivingBills(): Promise<ReceivingBillDTO> {
+    public async findAllReceivingBills(): Promise<ReceivingBillDTO[]> {
         return this.service.findAllReceivingBills();
     }
     

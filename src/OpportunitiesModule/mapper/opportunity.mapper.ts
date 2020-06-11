@@ -10,18 +10,19 @@ export class OpportunityMapper extends Mapper<Opportunity, OpportunityDTO> {
     }
 
     toDto(opportunityModel: Partial<Opportunity>): OpportunityDTO {
-        return super.toDto(opportunityModel);
+        let opportunityDto: OpportunityDTO = opportunityModel.toObject();
+        return opportunityDto;
     }
 
     toEntity(opportunityDto: Partial<OpportunityDTO>): Opportunity {
         return super.toEntity(opportunityDto);
     }
 
-    toDtoList(opportunitiesModel: Opportunity[]): OpportunityDTO[] {
-        return super.toDtoList(opportunitiesModel);
+    toDtoList(opportunitiesModel: Partial<Opportunity>[]): OpportunityDTO[] {
+        return opportunitiesModel.map(this.toDto);
     }
 
-    toEntityList(opportunitiesDto: OpportunityDTO[]): Opportunity[] {
+    toEntityList(opportunitiesDto: Partial<OpportunityDTO>[]): Opportunity[] {
         return super.toEntityList(opportunitiesDto);
     }
 }

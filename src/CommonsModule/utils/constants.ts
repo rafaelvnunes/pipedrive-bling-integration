@@ -8,3 +8,5 @@ export const PIPEDRIVE_ENDPOINT: string = 'pipedrive';
 
 export const BLING_ENDPOINT: string = 'bling';
 export const BILLS_ENDPOINT: string = 'bills';
+
+export const REPORTS_ENDPOINT: string = 'report';

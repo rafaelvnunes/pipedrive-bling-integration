@@ -5,6 +5,7 @@ import { BlingController } from "./controller";
 @Module({
     imports: [HttpModule],
     controllers: [BlingController],
-    providers: [BlingHttp, BlingService]
+    providers: [BlingHttp, BlingService],
+    exports: [BlingService]
 })
 export class BlingModule {}
