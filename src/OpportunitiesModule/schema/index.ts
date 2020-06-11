@@ -1,0 +1,1 @@
+export { Opportunity } from './opportunity.schema'

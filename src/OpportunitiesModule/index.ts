@@ -1,0 +1,5 @@
+export { OpportunityModule } from './opportunity.module'
+export { Opportunity } from './schema'
+export { OpportunityDTO } from './dto'
+export { OpportunityRepository } from './repository'
+export { OpportunityService } from './service'
