@@ -1,0 +1,1 @@
+export { OpportunityRepository } from './opportunity.repository'
