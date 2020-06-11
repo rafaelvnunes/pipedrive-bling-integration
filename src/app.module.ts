@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { ConfigurationModule, ConfigurationService } from './ConfigurationModule';
 import { OpportunityModule } from './OpportunitiesModule';
 import { PipedriveModule } from './PipedriveModule';
+import { BlingModule } from './BlingModule';
 
 const mongooseAsyncModule: MongooseModuleAsyncOptions = {
 	imports: [ConfigurationModule],
@@ -18,6 +19,7 @@ const mongooseAsyncModule: MongooseModuleAsyncOptions = {
 		ConfigurationModule,
 		OpportunityModule,
 		PipedriveModule,
+		BlingModule,
 		NestConfigurationModule.forRoot({isGlobal: true}),
 		MongooseModule.forRootAsync(mongooseAsyncModule)
 	],

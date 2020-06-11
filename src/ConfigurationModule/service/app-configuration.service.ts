@@ -11,6 +11,8 @@ export class AppConfigurationService {
     pipedriveApiKey: string = this.configurationService.get<string>('PIPEDRIVE_API_KEY');
     pipedriveCompanyDomain: string = this.configurationService.get<string>('PIPEDRIVE_COMPANY_DOMAIN');
 
+    blingApiKey: string = this.configurationService.get<string>('BLING_API_KEY');
+
     private databaseHost: string = this.configurationService.get<string>('DATABASE_HOST');
     private databaseName: string = this.configurationService.get<string>('DATABASE_NAME');
     private databaseUser: string = this.configurationService.get<string>('DATABASE_USERNAME');
